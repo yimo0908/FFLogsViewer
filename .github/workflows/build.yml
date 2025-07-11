@@ -3,9 +3,6 @@ name: Build
 
 on:
   workflow_dispatch:
-  push:
-    branches:
-      - main
 
 env:
   PUBLIC_NAME: FFLogsViewer
@@ -23,8 +20,6 @@ jobs:
         with:
           submodules: recursive
       - name: Extract branch name
-        run: |
-          echo "##[set-output name=branch;]$(echo ${{ github.event.head_commit.message }} | sed -nr 's/.*build$$([^)]+)$$.*/\1/p')"
         id: extract_branch
 
 
