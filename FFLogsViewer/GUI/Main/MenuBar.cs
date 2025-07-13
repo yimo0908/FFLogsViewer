@@ -122,7 +122,7 @@ public class MenuBar
                 {
                     color.Push(ImGuiCol.Text, job.Color);
 
-                    if (ImGui.MenuItem(job.Name))
+                    if (ImGui.MenuItem(Service.Localization.GetString(job.Name)))
                     {
                         Service.MainWindow.Job = job;
                         hasTmpSettingChanged   = true;
