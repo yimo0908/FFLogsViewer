@@ -16,7 +16,7 @@ public class StatsTab
         var hasChanged = false;
         var comboSize = Util.Round(GameDataManager.AvailableMetrics.Select(metric => ImGui.CalcTextSize(metric.Name).X).Max() + (30 * ImGuiHelpers.GlobalScale));
         ImGui.SetNextItemWidth(comboSize);
-        if (ImGui.BeginCombo("Default Job", GameDataManager.GetDefaultJob().Name))
+        if (ImGui.BeginCombo(Service.Localization.GetString("Stats_DefaultJob"), GameDataManager.GetDefaultJob().Name))
         {
             for (var i = 0; i < 2; i++)
             {
@@ -30,7 +30,7 @@ public class StatsTab
             ImGui.EndCombo();
         }
 
-        Util.SetHoverTooltip("Can be temporarily overridden in the main window");
+        Util.SetHoverTooltip(Service.Localization.GetString("Stats_HoverTooltip"));
 
         ImGui.SetNextItemWidth(comboSize);
         if (ImGui.BeginCombo(Service.Localization.GetString("Stats_DefaultMetric"), Service.Configuration.Metric.Name))
@@ -47,7 +47,7 @@ public class StatsTab
             ImGui.EndCombo();
         }
 
-        Util.SetHoverTooltip(Service.Localization.GetString("Stats_DefaultMetric_Help"));
+        Util.SetHoverTooltip(Service.Localization.GetString("Stats_HoverTooltip"));
 
         ImGui.SetNextItemWidth(comboSize);
         if (ImGui.BeginCombo("Default Timeframe", Service.Configuration.IsHistoricalDefault ? "Historical %" : "Today %"))
@@ -67,7 +67,7 @@ public class StatsTab
             ImGui.EndCombo();
         }
 
-        Util.SetHoverTooltip("Can be temporarily overridden in the main window");
+        Util.SetHoverTooltip(Service.Localization.GetString("Stats_HoverTooltip"));
 
         if (ImGui.BeginTable(
                 "##ConfigStatsTable",

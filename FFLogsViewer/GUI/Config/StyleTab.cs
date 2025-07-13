@@ -12,16 +12,16 @@ public class StyleTab
 
         ImGui.Indent();
 
-        if (ImGui.BeginCombo("Default view", Service.Configuration.IsDefaultViewParty ? "Party view" : "Single view"))
+        if (ImGui.BeginCombo(Service.Localization.GetString("Style_Defaultview"), Service.Configuration.IsDefaultViewParty ? "Party view" : "Single view"))
         {
-            if (ImGui.Selectable("Single view"))
+            if (ImGui.Selectable(Service.Localization.GetString("Style_Singleview")))
             {
                 Service.Configuration.IsDefaultViewParty = false;
                 Service.MainWindow.IsPartyView = false;
                 hasStyleChanged = true;
             }
 
-            if (ImGui.Selectable("Party view"))
+            if (ImGui.Selectable(Service.Localization.GetString("Style_Partyview")))
             {
                 Service.Configuration.IsDefaultViewParty = true;
                 Service.MainWindow.IsPartyView = true;
@@ -31,10 +31,10 @@ public class StyleTab
             ImGui.EndCombo();
         }
 
-        Util.DrawHelp("Default view when opening the window with /fflogs if the view has not been changed yet since last plugin restart.");
+        Util.DrawHelp(Service.Localization.GetString("Style_Defaultview_Help"));
 
         var hideInCombat = Service.Configuration.HideInCombat;
-        if (ImGui.Checkbox($@"{Service.Localization.GetString("Misc_HideInCombat")}##HideInCombat", ref hideInCombat))
+        if (ImGui.Checkbox($@"{Service.Localization.GetString("Style_HideInCombat")}##HideInCombat", ref hideInCombat))
         {
             Service.Configuration.HideInCombat = hideInCombat;
             hasStyleChanged = true;
@@ -115,7 +115,7 @@ public class StyleTab
         ImGui.Indent();
 
         ImGui.AlignTextToFramePadding();
-        ImGui.Text(Service.Localization.GetString("Misc_LogDecimalDigit"));
+        ImGui.Text(Service.Localization.GetString("Style_LogDecimalDigit"));
         for (var i = 0; i <= 2; i++)
         {
             ImGui.SameLine();
@@ -126,7 +126,7 @@ public class StyleTab
             }
         }
 
-        hasStyleChanged |= ImGui.Checkbox("Abbreviate job names", ref style.AbbreviateJobNames);
+        hasStyleChanged |= ImGui.Checkbox(Service.Localization.GetString("Style_Abbreviatejobnames"), ref style.AbbreviateJobNames);
         hasStyleChanged |= ImGui.Checkbox("Header separator", ref style.IsHeaderSeparatorDrawn);
 
         var tmpTableFlags2 = (int)style.MainTableFlags;
@@ -163,11 +163,11 @@ public class StyleTab
 
         ImGui.Unindent();
 
-        ImGui.Text("Party view:");
+        ImGui.Text(Service.Localization.GetString("Style_Partyview:"));
 
         ImGui.Indent();
 
-        if (ImGui.Checkbox("Include yourself in the party view", ref style.IsLocalPlayerInPartyView))
+        if (ImGui.Checkbox(Service.Localization.GetString("Style_Partyview_Help"), ref style.IsLocalPlayerInPartyView))
         {
             Service.CharDataManager.UpdatePartyMembers();
             hasStyleChanged = true;

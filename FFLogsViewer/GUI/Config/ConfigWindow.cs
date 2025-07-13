@@ -43,7 +43,7 @@ public class ConfigWindow : Window
             ImGui.EndTabItem();
         }
 
-        if (ImGui.BeginTabItem("Open With"))
+        if (ImGui.BeginTabItem(Service.Localization.GetString("Open_With")))
         {
             OpenWithTab.Draw();
             ImGui.EndTabItem();

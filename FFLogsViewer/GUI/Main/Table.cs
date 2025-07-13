@@ -165,11 +165,15 @@ public class Table
                 text = encounter?.BestAmount?.ToString();
                 break;
             case StatType.Job:
-                text = Service.Configuration.Style.AbbreviateJobNames ? encounter?.Job?.Abbreviation : encounter?.Job?.Name;
+                text = Service.Configuration.Style.AbbreviateJobNames 
+                    ? Service.Localization.GetString(encounter?.Job?.Abbreviation ?? string.Empty) 
+                    : Service.Localization.GetString(encounter?.Job?.Name ?? string.Empty);
                 color = encounter?.Job?.Color;
                 break;
             case StatType.BestJob:
-                text = Service.Configuration.Style.AbbreviateJobNames ? encounter?.BestJob?.Abbreviation : encounter?.BestJob?.Name;
+                text = Service.Configuration.Style.AbbreviateJobNames 
+                    ? Service.Localization.GetString(encounter?.BestJob?.Abbreviation ?? string.Empty) 
+                    : Service.Localization.GetString(encounter?.BestJob?.Name ?? string.Empty);
                 color = encounter?.BestJob?.Color;
                 break;
             case StatType.AllStarsPoints:

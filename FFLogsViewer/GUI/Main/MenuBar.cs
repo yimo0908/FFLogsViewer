@@ -35,7 +35,7 @@ public class MenuBar
                         Service.MainWindow.ResetSize();
                     }
 
-                    clearHoverTooltip = "Clear cache and refresh current logs";
+                    clearHoverTooltip = Service.Localization.GetString("MenuBar_clearHoverTooltip_1");
                 }
                 else
                 {
@@ -45,11 +45,11 @@ public class MenuBar
                         Service.MainWindow.ResetSize();
                     }
 
-                    clearHoverTooltip = "Clear current view";
+                    clearHoverTooltip = Service.Localization.GetString("MenuBar_ClearHoverTooltip");
 
                     if (Service.Configuration.IsCachingEnabled)
                     {
-                        clearHoverTooltip += " (hold ctrl to clear cache)";
+                        clearHoverTooltip += " " + Service.Localization.GetString("MenuBar_ClearCache");
                     }
                 }
             }
@@ -65,7 +65,7 @@ public class MenuBar
                 }
             }
 
-            Util.SetHoverTooltip(Service.Localization.GetString("Configuration"));
+            Util.SetHoverTooltip(Service.Localization.GetString("MenuBat_Configuration"));
 
             var swapViewIcon = Service.MainWindow.IsPartyView ? FontAwesomeIcon.User : FontAwesomeIcon.Users;
 
@@ -92,7 +92,9 @@ public class MenuBar
                 }
             }
 
-            Util.SetHoverTooltip(Service.MainWindow.IsPartyView ? "Swap to single view" : "Swap to party view");
+            Util.SetHoverTooltip(Service.MainWindow.IsPartyView 
+                ? Service.Localization.GetString("MenuBar_SwapToSingleView") 
+                : Service.Localization.GetString("MenuBar_SwapToPartyView"));
 
             {
                 using var font = ImRaii.PushFont(UiBuilder.IconFont);
@@ -103,7 +105,7 @@ public class MenuBar
                 }
             }
 
-            Util.SetHoverTooltip("History");
+            Util.SetHoverTooltip(Service.Localization.GetString("MenuBar_History"));
 
             DrawHistoryPopup();
 

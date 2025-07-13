@@ -277,7 +277,7 @@ public class LayoutTab
                 text = "Loading...";
             }
 
-            ImGui.Text($"Possible requests per hour: {text}");
+            ImGui.Text($"{Service.Localization.GetString("Layout_PossibleRequestsPerHour")}: {text}");
             Util.DrawHelp(
                 $"Points per hour: {(Service.FFLogsClient.LimitPerHour > 0 ? Service.FFLogsClient.LimitPerHour : "Loading...")}\n" +
                 "Points are used by the FF Logs API every time you make a request.\n" +
