@@ -127,7 +127,7 @@ public class StyleTab
         }
 
         hasStyleChanged |= ImGui.Checkbox(Service.Localization.GetString("Style_Abbreviatejobnames"), ref style.AbbreviateJobNames);
-        hasStyleChanged |= ImGui.Checkbox("Header separator", ref style.IsHeaderSeparatorDrawn);
+        hasStyleChanged |= ImGui.Checkbox(Service.Localization.GetString("标题分割"), ref style.IsHeaderSeparatorDrawn);
 
         var tmpTableFlags2 = (int)style.MainTableFlags;
         if (ImGui.CheckboxFlags($"{Service.Localization.GetString("Style_AlternateRowBackground")}##TableFlag", ref tmpTableFlags2, (int)ImGuiTableFlags.RowBg))

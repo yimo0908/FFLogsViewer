@@ -117,6 +117,9 @@ public class Configuration : IPluginConfiguration
             new LayoutEntry { Type = LayoutEntryType.Encounter, Alias = "泽莲尼娅", Expansion = "Dawntrail", Zone = "Trials II (Extreme)", ZoneId = 67, Encounter = "Zelenia", EncounterId = 1080, Difficulty = "Normal", DifficultyId = 100 },
             new LayoutEntry { Type = LayoutEntryType.Header, Alias = "诛灭战", Expansion = "-", Zone = "-", Encounter = "-", Difficulty = "-" },
             new LayoutEntry { Type = LayoutEntryType.Encounter, Alias = "暗黑之云", Expansion = "Dawntrail", Zone = "Alliance Raids (Chaotic)", ZoneId = 66, Encounter = "Cloud of Darkness", EncounterId = 2061, Difficulty = "Normal", DifficultyId = 100 },
+            new LayoutEntry { Type = LayoutEntryType.Header, Alias = "幻巧战", Expansion = "-", Zone = "-", Encounter = "-", Difficulty = "-" },
+            new LayoutEntry { Type = LayoutEntryType.Encounter, Alias = "朱雀", Expansion = "Dawntrail", Zone = "Trials (Unreal)", ZoneId = 64, Encounter = "Suzaku", EncounterId = 3010, Difficulty = "Normal", DifficultyId = 100 },
+            new LayoutEntry { Type = LayoutEntryType.Encounter, Alias = "白虎", Expansion = "Dawntrail", Zone = "Trials (Unreal)", ZoneId = 64, Encounter = "Byakko", EncounterId = 3009, Difficulty = "Normal", DifficultyId = 100 },
         ];
     }
 
