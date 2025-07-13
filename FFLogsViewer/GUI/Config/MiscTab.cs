@@ -16,7 +16,6 @@ public class MiscTab
         }
 
         var hasChanged = false;
-
         var contextMenu = Service.Configuration.ContextMenu;
         if (ImGui.Checkbox($@"{Service.Localization.GetString("Misc_EnableContextMenu")}##ContextMenu", ref contextMenu))
         {
@@ -42,20 +41,20 @@ public class MiscTab
         ImGui.BeginDisabled(Service.Configuration.ContextMenuStreamer);
 
         var contextMenuButtonName = Service.Configuration.ContextMenuButtonName;
-        if (ImGui.InputText($@"{Service.Localization.GetString("Misc_ButtonName)}##ContextMenuButtonName", ref contextMenuButtonName, 50))
+        if (ImGui.InputText($@"{Service.Localization.GetString("Misc_ButtonName")}##ContextMenuButtonName", ref contextMenuButtonName, 50))
         {
             Service.Configuration.ContextMenuButtonName = contextMenuButtonName;
             hasChanged = true;
         }
 
         var openInBrowser = Service.Configuration.OpenInBrowser;
-        if (ImGui.Checkbox("Misc_OpenInBrowser_Help", ref openInBrowser))
+        if (ImGui.Checkbox($@"{Service.Localization.GetString("Misc_Misc_OpenInBrowser")}##OpenInBrowser", ref openInBrowser))
         {
             Service.Configuration.OpenInBrowser = openInBrowser;
             hasChanged = true;
         }
 
-        Util.DrawHelp(Service.Localization.GetString("Misc_EnableContextMenu_Help"));
+        Util.DrawHelp(Service.Localization.GetString("Misc_Misc_OpenInBrowser_Help"));
 
         ImGui.EndDisabled();
 
