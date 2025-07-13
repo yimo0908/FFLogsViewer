@@ -22,6 +22,7 @@
     "Dismiss": "不再提醒",
 
     "All jobs": "所有职业",
+    "Current job": "当前职业",
     "Astrologian": "占星术士",
     "Bard": "吟游诗人",
     "Black Mage": "黑魔法师",
@@ -41,6 +42,8 @@
     "Summoner": "召唤师",
     "Warrior": "战士",
     "White Mage": "白魔法师",
+    "Viper": "蝰蛇剑士",
+    "Pictomancer": "绘灵法师",
 
     "Standard": "标准阵容",
     "Non-Standard": "非标准阵容",

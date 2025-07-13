@@ -1,5 +1,4 @@
 using System.Collections.Generic;
-using Dalamud;
 using Dalamud.Game;
 using FFLogsViewer.Properties;
 using Newtonsoft.Json;
@@ -28,12 +27,8 @@ public class LocalizationManager
                                    : Language.English;
     }
 
-    public List<Language> AvailableLanguages { get; } = new();
-
     public string? GetString(string? key)
-    {
-        return this._strings[this.currentLanguage].ContainsKey(key) ? this._strings[this.currentLanguage][key] : key;
-    }
+        => _strings[currentLanguage].GetValueOrDefault(key, key);
 
     private void LoadStrings(Language lang)
     {
@@ -44,6 +39,8 @@ public class LocalizationManager
             _ => Resources.en,
         };
 
-        this._strings[lang] = JsonConvert.DeserializeObject<Dictionary<string, string>>(str)!;
+        var dict = JsonConvert.DeserializeObject<Dictionary<string, string?>>(str) ?? [];
+
+        _strings[lang] = dict;
     }
 }
