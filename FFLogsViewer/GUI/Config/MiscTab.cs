@@ -48,13 +48,13 @@ public class MiscTab
         }
 
         var openInBrowser = Service.Configuration.OpenInBrowser;
-        if (ImGui.Checkbox($@"{Service.Localization.GetString("Misc_Misc_OpenInBrowser")}##OpenInBrowser", ref openInBrowser))
+        if (ImGui.Checkbox($@"{Service.Localization.GetString("Misc_OpenInBrowser")}##OpenInBrowser", ref openInBrowser))
         {
             Service.Configuration.OpenInBrowser = openInBrowser;
             hasChanged = true;
         }
 
-        Util.DrawHelp(Service.Localization.GetString("Misc_Misc_OpenInBrowser_Help"));
+        Util.DrawHelp(Service.Localization.GetString("Misc_OpenInBrowser_Help"));
 
         ImGui.EndDisabled();
 

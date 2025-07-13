@@ -65,7 +65,7 @@ public class MenuBar
                 }
             }
 
-            Util.SetHoverTooltip(Service.Localization.GetString("MenuBat_Configuration"));
+            Util.SetHoverTooltip(Service.Localization.GetString("MenuBar_Configuration"));
 
             var swapViewIcon = Service.MainWindow.IsPartyView ? FontAwesomeIcon.User : FontAwesomeIcon.Users;
 
